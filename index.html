@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AskGogo — India market entry for global tech</title>
+    <style>
+        /* 
+            Pure black / white / grey palette, simple blue accent.
+            Structure enriched with consultant sections (case studies, insights, trust bar)
+            while strictly following andyraskin.com minimalism.
+        */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.5;
+            font-size: 18px;
+        }
+
+        :root {
+            --text-primary: #000000;
+            --text-secondary: #6c757d;      /* medium gray */
+            --border-light: #e9ecef;         /* very light gray */
+            --bg-subtle: #f8f9fa;            /* off-white */
+            --accent: #0d6efd;                /* simple blue */
+            --accent-hover: #0b5ed7;
+            --white: #ffffff;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+        }
+
+        h3 {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .text-small {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid var(--border-light);
+            margin: 40px 0;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 64px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        /* navigation */
+        .navbar {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border-light);
+            background: var(--white);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 16px;
+            font-weight: 400;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .btn-link {
+            background: none;
+            border: none;
+            color: var(--accent);
+            font-size: 18px;
+            font-weight: 400;
+            text-decoration: none;
+            padding: 0;
+            cursor: pointer;
+            border-bottom: 1px solid transparent;
+        }
+
+        .btn-link:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+
+        .btn-primary {
+            background: var(--text-primary);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 0;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 400;
+            border: 1px solid var(--text-primary);
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: white;
+            color: var(--text-primary);
+        }
+
+        /* hero */
+        .hero {
+            padding: 80px 0 40px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            color: var(--text-secondary);
+        }
+
+        /* grids */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        /* service cards */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin: 40px 0;
+        }
+
+        .service-item {
+            border-top: 1px solid var(--border-light);
+            padding-top: 24px;
+        }
+
+        .service-item h3 {
+            margin-bottom: 8px;
+            font-size: 22px;
+        }
+
+        .service-item p {
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        /* case study cards */
+        .case-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .case-card {
+            padding: 32px;
+            background: var(--bg-subtle);
+            border: 1px solid var(--border-light);
+        }
+
+        .case-card .case-head {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .case-card .case-role {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .case-detail {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .case-detail p {
+            flex: 2;
+            margin-bottom: 0;
+            font-size: 16px;
+        }
+
+        .case-result {
+            flex: 1;
+            background: white;
+            padding: 16px;
+            border: 1px solid var(--border-light);
+            font-weight: 600;
+        }
+
+        .case-result span {
+            display: block;
+            font-size: 24px;
+            color: var(--text-primary);
+        }
+
+        /* testimonial */
+        .testimonial {
+            padding: 20px 0;
+        }
+
+        .testimonial blockquote {
+            font-size: 24px;
+            line-height: 1.4;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+
+        .testimonial cite {
+            font-size: 16px;
+            color: var(--text-secondary);
+            font-style: normal;
+        }
+
+        /* trust bar / logos */
+        .trust-bar {
+            margin: 40px 0;
+        }
+
+        .logo-strip {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            opacity: 0.8;
+            margin: 20px 0;
+        }
+
+        .logo-item {
+            background: #f1f3f5;
+            padding: 6px 12px;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* insights grid */
+        .insight-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .insight-card {
+            border-top: 1px solid var(--border-light);
+            padding-top: 24px;
+        }
+
+        .insight-card h4 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .insight-card p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* contact block */
+        .contact-block {
+            background: var(--bg-subtle);
+            padding: 64px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .contact-block h2 {
+            margin-bottom: 16px;
+        }
+
+        .contact-details {
+            font-size: 20px;
+            margin: 24px 0;
+        }
+
+        .contact-details a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .footer {
+            padding: 40px 0;
+            background: var(--white);
+            border-top: 1px solid var(--border-light);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            body { font-size: 16px; }
+            h1 { font-size: 36px; }
+            h2 { font-size: 28px; }
+            .grid-2 { grid-template-columns: 1fr; gap: 40px; }
+            .service-grid { grid-template-columns: 1fr; }
+            .insight-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .footer-content { flex-direction: column; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation with AskGogo (personal name removed) -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="/" class="logo">AskGogo</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#insights">Insights</a>
+                <a href="#contact">Contact</a>
+                <a href="#book" class="btn-primary">Book a call</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero – India focus, "I" retained for personal touch but brand is AskGogo -->
+    <div class="hero">
+        <div class="container">
+            <h1>I help global technology companies enter and scale in India.</h1>
+            <p>Enterprise introductions, partnerships, and market access — through trusted relationships built over a decade. I sit on your side of the table.</p>
+            <a href="#book" class="btn-link">Book a conversation →</a>
+        </div>
+    </div>
+
+    <!-- Problem & solution (grid) -->
+    <section id="about">
+        <div class="container">
+            <div class="grid-2">
+                <div>
+                    <h2>Entering India is complex</h2>
+                    <p>Finding enterprise customers, navigating the ecosystem, and reaching decision makers requires local knowledge and trusted relationships. Cold outreach won't get you there.</p>
+                </div>
+                <div>
+                    <h2>What I provide</h2>
+                    <p>Direct market access, CXO introductions, and ecosystem partnerships. I help you skip the noise and connect with the right people — from CHROs to CTOs, founders to funds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services – now under AskGogo banner -->
+    <section id="services">
+        <div class="container">
+            <h2>Services</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <h3>India Market Entry Advisory</h3>
+                    <p>Market mapping, GTM strategy, entry roadmap. I help you understand the terrain and move fast.</p>
+                    <span class="text-small">Strategy & execution</span>
+                </div>
+                <div class="service-item">
+                    <h3>Enterprise CXO Introductions</h3>
+                    <p>Curated, warm introductions to decision-makers at top Indian enterprises and GCCs.</p>
+                    <span class="text-small">CHROs, CTOs, founders</span>
+                </div>
+                <div class="service-item">
+                    <h3>HR Tech Market Development</h3>
+                    <p>Demos, pilots, and partnerships with India's largest employers and HR platforms.</p>
+                    <span class="text-small">HR tech focus</span>
+                </div>
+                <div class="service-item">
+                    <h3>GCC Ecosystem Advisory</h3>
+                    <p>Global Capability Centers – helping you position and sell into India's fastest-growing buying segment.</p>
+                    <span class="text-small">GCC strategy</span>
+                </div>
+            </div>
+            <a href="#contact" class="btn-link">→ Explore how we work together</a>
+        </div>
+    </section>
+
+    <!-- Featured engagements (case cards) -->
+    <section>
+        <div class="container">
+            <h2>Featured engagements</h2>
+            <div class="case-list">
+                <div class="case-card">
+                    <div class="case-head">European HR SaaS</div>
+                    <div class="case-role">Market entry & enterprise pilots</div>
+                    <div class="case-detail">
+                        <p><strong>Challenge:</strong> No local presence, struggled to reach HR heads at Indian IT firms.<br> <strong>Approach:</strong> Targeted CXO introductions + pilot design with two major Bangalore-based IT services companies.</p>
+                        <div class="case-result"><span>2</span> enterprise pilots within 4 months</div>
+                    </div>
+                    <a href="#" class="btn-link" style="margin-top: 16px; display: inline-block;">Read more →</a>
+                </div>
+                <div class="case-card">
+                    <div class="case-head">US‑based future-of-work platform</div>
+                    <div class="case-role">GCC ecosystem access</div>
+                    <div class="case-detail">
+                        <p><strong>Challenge:</strong> Wanted to land first 3 Indian GCC clients but had no relationships.<br> <strong>Approach:</strong> Mapped 20 target GCCs, facilitated 8 leadership meetings, supported proposal positioning.</p>
+                        <div class="case-result"><span>2</span> signed contracts with global capability centers</div>
+                    </div>
+                    <a href="#" class="btn-link" style="margin-top: 16px; display: inline-block;">Read more →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial (refers to "AskGogo" to reinforce brand) -->
+    <section>
+        <div class="container">
+            <div class="testimonial">
+                <blockquote>
+                    “AskGogo helped us navigate the Indian HR tech landscape seamlessly. Within 3 months, we had pilot meetings with 2 major IT firms. That's the power of trusted relationships.”
+                </blockquote>
+                <cite>— CEO, European HR Technology Company</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust bar / investor logos -->
+    <section class="trust-bar">
+        <div class="container">
+            <p class="text-small" style="margin-bottom: 24px;">I work with leadership teams funded by:</p>
+            <div class="logo-strip">
+                <span class="logo-item">Andreessen Horowitz</span>
+                <span class="logo-item">Accel</span>
+                <span class="logo-item">NEA</span>
+                <span class="logo-item">Google Ventures</span>
+                <span class="logo-item">Sequoia</span>
+            </div>
+            <p class="text-small" style="margin-top: 24px;">...and other top global investors.</p>
+        </div>
+    </section>
+
+    <!-- Insights -->
+    <section id="insights">
+        <div class="container">
+            <h2>Insights & thinking</h2>
+            <div class="insight-grid">
+                <div class="insight-card">
+                    <h4>Why India GCCs are your fastest route</h4>
+                    <p>Global Capability Centers are now 1,600+ strong – and they're actively buying.</p>
+                    <a href="#" class="btn-link">Read →</a>
+                </div>
+                <div class="insight-card">
+                    <h4>The pilot playbook for Indian enterprises</h4>
+                    <p>How to design pilots that actually convert (and avoid the 'free pilot' trap).</p>
+                    <a href="#" class="btn-link">Read →</a>
+                </div>
+                <div class="insight-card">
+                    <h4>CHRO‑to‑CHRO: selling HR tech in India</h4>
+                    <p>Trust is the only currency. What I've learned from dozens of CXO intros.</p>
+                    <a href="#" class="btn-link">Read →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact block with email: Goverdhan@askgogo.in (personal email retained) -->
+    <div class="contact-block" id="contact">
+        <div class="container">
+            <h2>Ready to enter the Indian market?</h2>
+            <p style="max-width: 550px; margin: 0 auto 16px;">Get a free 30-minute market briefing tailored to your company's stage. No pitch. Just insights and a clear view of the terrain.</p>
+            <div class="contact-details">
+                <a href="mailto:Goverdhan@askgogo.in">Goverdhan@askgogo.in</a>  ·  <a href="#">LinkedIn</a>
+            </div>
+            <a href="#book" class="btn-primary" style="margin-top: 24px;">Schedule a briefing</a>
+        </div>
+    </div>
+
+    <!-- Footer with AskGogo only -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>© 2025 AskGogo — India market entry</div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#insights">Insights</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
